@@ -1,0 +1,9 @@
+<h1>{{semestr.name}}</h1>
+<h2>{{semestr.desc}}</h2>
+{{#sortable-objects sortableObjectList=semestr.eps sortEndAction='sortEndAction' enableSort=true}}
+  {{#each semestr.eps as |item|}}
+    {{#draggable-object content=item overrideClass='sortObject' isSortable=true}}
+      {{item.name}}
+    {{/draggable-object}}
+  {{/each}}
+{{/sortable-objects}}
